@@ -61,3 +61,7 @@ In the example project code find the `let edgeLicense` placeholder and replace i
 
 |**NOTE:** <br/><br/>**This example project requires a real iOS device running the latest iOS version.**<br/><br/>Working with the iOS Simulator and the mimik Client Libraries entails some special consideration. For more more information about iOS Simulator support see [this tutorial](../tutorials/12-index#workingwithaniossimulator).|
 |----------|
+
+# Example Functions:
+
+![Get ID Token](images/example-screenshot-01.png)
