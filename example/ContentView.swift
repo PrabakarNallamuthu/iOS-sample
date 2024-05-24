@@ -29,7 +29,7 @@ struct ContentView: View {
         return EdgeClient()
     }()
     
-    let accessToken = "{YOUR-EDGE-ENGINGE-ACCESS-TOKEN}"
+    let accessToken = "{YOUR-EDGE-ENGINE-ACCESS-TOKEN}"
     
     let devIdToken = "{YOUR-DEVELOPER-ID-TOKEN-FROM-https://console.mimik.com}"
     
@@ -40,20 +40,20 @@ struct ContentView: View {
             Spacer()
             Text("Hello, mimik developer!")
             
-            Button("Start edge") {
+            Button("Start edgeEngine") {
                 Task {
                     await startEdgeEngine()
                 }
             }
-            Button("Stop edge") {
+            Button("Stop edgeEngine") {
                 stopEdgeEngine()
             }
-            Button("edge info") {
+            Button("edgeEngine info") {
                 Task {
                     await edgeEngineInfo()
                 }
             }
-            Button("Authenticate edge") {
+            Button("Authenticate edgeEngine") {
                 Task {
                     await authenticateEdgeEngine()
                 }
@@ -63,7 +63,7 @@ struct ContentView: View {
                     await deployMicroservice(edgeEngineAccessToken: accessToken)
                 }
             }
-            Button("List edge microservice") {
+            Button("List edge microservices") {
                 Task {
                     await deployedMicroservices(edgeEngineAccessToken: accessToken)
                 }
@@ -83,7 +83,7 @@ struct ContentView: View {
                     await undeployMicroservice(edgeEngineAccessToken: accessToken)
                 }
             }
-            Button("Reset edge") {
+            Button("Reset edgeEngine") {
                 Task {
                     await resetEdgeEngine()
                 }
