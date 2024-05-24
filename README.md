@@ -41,7 +41,7 @@ pod install --repo-update
 **Step 3:** From the command line run the following command in your project directory.
 
 ```
-open iOS-devdocs-example-01.xcworkspace
+open example.xcworkspace
 ```
 
 **Step 4:**  Go to the mimik Developer Console and generate the Developer ID Token from an edge project. 
