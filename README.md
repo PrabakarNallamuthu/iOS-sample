@@ -2,11 +2,13 @@
 Example Xcode project for iOS Tutorials 01
 
 
-# Technical Prerequisites
+# Prerequisites
 
-This example Xcode project has the following technical prerequisite: 
+- Attaching a **real iOS device** to the development Mac and selecting it as the build target. This won't work with the iOS simulator.
 
-* An actual device running the latest iOS version, connected to the machine with the latest version of Xcode.
+|**NOTE:** <br/><br/>Working with the iOS Simulator and the mimik Client Libraries entails some special consideration. For more more information about iOS Simulator support see [this tutorial](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index#workingwithaniossimulator).|
+|----------|
+
 
 # Getting the Source Code
 
@@ -26,13 +28,13 @@ As mentioned in the tutorials, the mimik Client Library cocoapods `EdgeCore` and
 
 We have setup these references in the `Podfile` file at the project level for you.
 
-**Step 1**:** From the command line run the following command to get to the Xcode project directory.
+**Step 1:** From the command line run the following command to get to the Xcode project directory.
 
 ```
 cd iOS-devdocs-example-01
 ```
 
-**Step 2**:** From the command line run the following command (from inside the Xcode project directory).
+**Step 2:** From the command line run the following command (from inside the Xcode project directory).
 
 ```
 pod install --repo-update
@@ -44,16 +46,12 @@ pod install --repo-update
 open example.xcworkspace
 ```
 
-**Step 4:**  Go to the mimik Developer Console and generate the Developer ID Token from an edge project. 
-
-Learn more about the token generation process by reading this [article](https://devdocs.mimik.com/key-concepts/03-index)
+**Step 4:**  Go to the [mimik Developer Console](https://console.mimik.com) and generate the Developer ID Token from an edge project that you create.
 
 Once generated, copy the Developer ID Token. Then in the example project code find the `let devIdToken` placeholder and replace it with the actual Developer ID Token value.
 
 
-**Step 5:**  Back to the mimik Developer Console and copy the Developer edge License from there as well. 
-
-Learn more about the process by reading this the tutorial [Getting the edgeEngine license and Identity server values from mimik Developer Portal](https://devdocs.mimik.com/tutorials/02-index)
+**Step 5:**  Back to the mimik Developer Console and copy the mim OE (Edge) License from there as well. 
 
 In the example project code find the `let edgeLicense` placeholder and replace it with the actual Developer edge License value.
 
@@ -65,3 +63,14 @@ In the example project code find the `let edgeLicense` placeholder and replace i
 # Example Functions:
 
 ![Get ID Token](images/example-screenshot-01.png)
+
+
+# Additional reading
+
+In order to get more out of this article, the reader could further familiarize themselves with the following concepts and techniques:
+
+- [Understanding the mimik Client Library for iOS](https://devdocs.mimik.com/key-concepts/10-index).
+- [Creating a Simple iOS Application that Uses an edge microservice](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/01-index).
+- [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index).
+- [Working with mim OE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
+- [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index).

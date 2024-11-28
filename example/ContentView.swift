@@ -13,8 +13,8 @@ import Alamofire
 struct ContentView: View {
     
     let edgeClient: EdgeClient = {
-        EdgeClient.setLoggingLevel(level: .debug, module: .edgeCore)
-        EdgeClient.setLoggingLevel(level: .debug, module: .edgeEngine)
+        EdgeClient.setLoggingLevel(module: .edgeCore, level: .debug, privacy: .publicAccess)
+        EdgeClient.setLoggingLevel(module: .edgeEngine, level: .debug, privacy: .publicAccess)
         
         // Calling mimik Client Library class method to determine the lifecycle management state
         switch EdgeClient.manageEdgeEngineLifecycle(manage: true) {
@@ -29,63 +29,63 @@ struct ContentView: View {
         return EdgeClient()
     }()
     
-    let accessToken = "{YOUR-EDGE-ENGINE-ACCESS-TOKEN}"
+    let accessToken = "{YOUR-mim-OE-ACCESS-TOKEN}"
     
     let devIdToken = "{YOUR-DEVELOPER-ID-TOKEN-FROM-https://console.mimik.com}"
     
-    let edgeLicense = "{YOUR-DEVELOPER-EDGE-LICENSE-FROM-https://console.mimik.com}"
+    let edgeLicense = "{YOUR-DEVELOPER-mim-OE-EDGE-LICENSE-FROM-https://console.mimik.com}"
     
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
             Text("Hello, mimik developer!")
             
-            Button("Start edgeEngine") {
+            Button("Start mim OE") {
                 Task {
-                    await startEdgeEngine()
+                    await startMimOE()
                 }
             }
-            Button("Stop edgeEngine") {
-                stopEdgeEngine()
+            Button("Stop mim OE") {
+                stopMimOE()
             }
-            Button("edgeEngine info") {
+            Button("mim OE info") {
                 Task {
-                    await edgeEngineInfo()
+                    await mimOEInfo()
                 }
             }
-            Button("Authenticate edgeEngine") {
+            Button("Authenticate mim OE") {
                 Task {
-                    await authenticateEdgeEngine()
+                    await authenticateMimOE()
                 }
             }
             Button("Deploy edge microservice") {
                 Task {
-                    await deployMicroservice(edgeEngineAccessToken: accessToken)
+                    await deployMicroservice(accessToken: accessToken)
                 }
             }
             Button("List edge microservices") {
                 Task {
-                    await deployedMicroservices(edgeEngineAccessToken: accessToken)
+                    await deployedMicroservices(accessToken: accessToken)
                 }
             }
             Button("Call edge microservice") {
                 Task {
-                    await callMicroservice(edgeEngineAccessToken: accessToken)
+                    await callMicroservice(accessToken: accessToken)
                 }
             }
             Button("Update edge microservice") {
                 Task {
-                    await updateMicroservice(edgeEngineAccessToken: accessToken)
+                    await updateMicroservice(accessToken: accessToken)
                 }
             }
             Button("Undeploy edge microservice") {
                 Task {
-                    await undeployMicroservice(edgeEngineAccessToken: accessToken)
+                    await undeployMicroservice(accessToken: accessToken)
                 }
             }
-            Button("Reset edgeEngine") {
+            Button("Reset mim OE") {
                 Task {
-                    await resetEdgeEngine()
+                    await resetMimOE()
                 }
             }
             Spacer()
@@ -103,7 +103,7 @@ struct ContentView: View {
         .padding()
     }
     
-    func startEdgeEngine() async -> Result<Void, NSError> {
+    func startMimOE() async -> Result<Void, NSError> {
         // Using developer edge license from mimik developer console at https://console.mimik.com
         let edgeLicense = edgeLicense
 
@@ -113,22 +113,22 @@ struct ContentView: View {
         // Calling mimik Client Library method to starting edgeEngine asynchronously, waiting for the result.
         switch await self.edgeClient.startEdgeEngine(parameters: startupParameters) {
         case .success:
-            print("Success starting edgeEngine")
+            print("Success starting mim OE")
             // Startup successful, returning success.
             return .success(())
         case .failure(let error):
-            print("Error starting edgeEngine", error.localizedDescription)
+            print("Error starting mim OE", error.localizedDescription)
             // Startup unsuccessful, returning failure.
             return .failure(error)
         }
     }
     
-    func stopEdgeEngine() {
+    func stopMimOE() {
         // Calling mimik Client Library method to stop edgeEngine synchronously.
         self.edgeClient.stopEdgeEngine()
     }
     
-    func edgeEngineInfo() async -> Result<Any, NSError> {
+    func mimOEInfo() async -> Result<Any, NSError> {
         // Calling mimik Client Library method to get the edgeEngine Runtime information
         switch await self.edgeClient.edgeEngineInfo() {
         case .success(let info):
@@ -142,7 +142,7 @@ struct ContentView: View {
         }
     }
     
-    func authenticateEdgeEngine() async -> Result<String, NSError> {
+    func authenticateMimOE() async -> Result<String, NSError> {
         // Using developer ID Token from mimik Developer Console
         let developerIdToken = devIdToken // <DEVELOPER_ID_TOKEN>
         
@@ -166,7 +166,7 @@ struct ContentView: View {
     }
     
     // We pass the edgeEngine Access Token required to deploy the edge microservice as a parameter. See "Creating an Access Token" in the previous tutorial
-    func deployMicroservice(edgeEngineAccessToken: String) async -> Result<EdgeClient.Microservice, NSError> {
+    func deployMicroservice(accessToken: String) async -> Result<EdgeClient.Microservice, NSError> {
 
         // Application's bundle reference to the edge microservice tar file
         guard let imageTarPath = Bundle.main.path(forResource: "randomnumber_v1", ofType: "tar") else {
@@ -178,7 +178,7 @@ struct ContentView: View {
         let config = EdgeClient.Microservice.Config(imageName: "randomnumber-v1", containerName: "randomnumber-v1", basePath: "/randomnumber/v1", envVariables: ["some-key": "some-value"])
 
         // Calling mimik Client Library method to deploy the edge microservice
-        switch await self.edgeClient.deployMicroservice(edgeEngineAccessToken: edgeEngineAccessToken, config: config, imageTarPath: imageTarPath) {
+        switch await self.edgeClient.deployMicroservice(edgeEngineAccessToken: accessToken, config: config, imageTarPath: imageTarPath) {
         case .success(let microservice):
             print("Success", microservice)
             // Call successful, returning success with the deployed edge microservice object reference
@@ -191,10 +191,10 @@ struct ContentView: View {
     }
     
     // We pass the edgeEngine Access Token required to list the deployed the edge microservice as a parameter. See "Creating an Access Token" in the previous tutorial
-    func deployedMicroservices(edgeEngineAccessToken: String) async -> Result<[EdgeClient.Microservice], NSError> {
+    func deployedMicroservices(accessToken: String) async -> Result<[EdgeClient.Microservice], NSError> {
         
         // Calling mimik Client Library method to get the deployed edge microservice references
-        switch await self.edgeClient.deployedMicroservices(edgeEngineAccessToken: edgeEngineAccessToken) {
+        switch await self.edgeClient.microservices(edgeEngineAccessToken: accessToken) {
         case .success(let microservices):
             
             // Guarding against the array being empty.
@@ -206,7 +206,7 @@ struct ContentView: View {
             
             for microservice in microservices {
                 // Attempting to establish a url to the deployed edge microservice /randomNumber endpoint
-                guard let url = microservice.fullPathUrl(withEndpoint: "/randomNumber")?.url else {
+                guard let url = microservice.urlComponents(withEndpoint: "/randomNumber")?.url else {
                     print("Error")
                     // Unable to establish the full path url to the deployed edge microservice endpoint
                     continue
@@ -228,18 +228,18 @@ struct ContentView: View {
     }
     
     // We pass the edgeEngine Access Token required to list the deployed edge microservices as a parameter. See "Creating an Access Token" in the previous tutorial
-    func callMicroservice(edgeEngineAccessToken: String) async -> Result<Any, NSError> {
+    func callMicroservice(accessToken: String) async -> Result<Any, NSError> {
         
         // Getting a reference to the full path url of the deployed edge microservice endpoint
-        guard case let .success(microservices) = await self.edgeClient.deployedMicroservices(edgeEngineAccessToken: accessToken),
-              let url = microservices.first?.fullPathUrl(withEndpoint: "/randomNumber")?.url else {
+        guard case let .success(microservices) = await self.edgeClient.microservices(edgeEngineAccessToken: accessToken),
+              let url = microservices.first?.urlComponents(withEndpoint: "/randomNumber")?.url else {
             print("Error")
             // Call unsuccessful, returning a failure
             return .failure(NSError.init(domain: "Error", code: 404))
         }
         
         // In the case of our example edge microservice, the endpoint requires authentication. We will use the edgeEngine Access Token here.
-        let httpHeaders = HTTPHeaders(["Authorization" : "Bearer \(edgeEngineAccessToken)"])
+        let httpHeaders = HTTPHeaders(["Authorization" : "Bearer \(accessToken)"])
         
         // Alamofire request call to the endpoint's full path url, with serialization of a Decodable Int value
         let dataTask = AF.request(url, headers: httpHeaders).serializingDecodable(Int.self)
@@ -255,24 +255,17 @@ struct ContentView: View {
     }
     
     // We pass the edgeEngine Access Token required to update the deployed edge microservices as a parameter. See "Creating an Access Token" in the previous tutorial
-    func updateMicroservice(edgeEngineAccessToken: String) async -> Result<EdgeClient.Microservice, NSError> {
+    func updateMicroservice(accessToken: String) async -> Result<EdgeClient.Microservice, NSError> {
         
         // Getting a reference to the full path url of the deployed edge microservice endpoint
-        guard case let .success(microservices) = await self.edgeClient.deployedMicroservices(edgeEngineAccessToken: accessToken), let microservice = microservices.first else {
+        guard case let .success(microservices) = await self.edgeClient.microservices(edgeEngineAccessToken: accessToken), let microservice = microservices.first else {
             // Call unsuccessful, returning a failure
             print("Error")
             return .failure(NSError.init(domain: "Error", code: 500))
         }
         
-        // Application's bundle reference to the edge microservice tar file
-        guard let imageTarPath = Bundle.main.path(forResource: "randomnumber_v1", ofType: "tar") else {
-            // Tar file not found, returning failing
-            print("Error")
-            return .failure(NSError.init(domain: "Error", code: 404))
-        }
-        
         // Calling mimik Client Library method to update the selected edge microservice
-        switch await self.edgeClient.updateMicroservice(edgeEngineAccessToken: accessToken, microservice: microservice, imageTarPath: imageTarPath, envVariables: ["some-new-key": "some-new-value"]) {
+        switch await self.edgeClient.updateMicroserviceEnv(edgeEngineAccessToken: accessToken, microservice: microservice, envVariables: ["some-new-key": "some-new-value"]) {
         case .success(let microservice):
             print("Success", microservice)
             // Call successful, returning success with the updated edge microservice reference
@@ -285,10 +278,10 @@ struct ContentView: View {
     }
     
     // We pass the edgeEngine Access Token required to update the deployed edge microservices as a parameter. See "Creating an Access Token" in the previous tutorial
-    func undeployMicroservice(edgeEngineAccessToken: String) async -> Result<Void, NSError> {
+    func undeployMicroservice(accessToken: String) async -> Result<Void, NSError> {
         
         // Getting a reference to the full path url of the deployed edge microservice endpoint
-        guard case let .success(microservices) = await self.edgeClient.deployedMicroservices(edgeEngineAccessToken: accessToken), let microservice = microservices.first else {
+        guard case let .success(microservices) = await self.edgeClient.microservices(edgeEngineAccessToken: accessToken), let microservice = microservices.first else {
             // Call unsuccessful, returning a failure
             print("Error")
             return .failure(NSError.init(domain: "Error", code: 500))
@@ -307,7 +300,7 @@ struct ContentView: View {
         }
     }
     
-    func resetEdgeEngine() async -> Result<Void, NSError> {
+    func resetMimOE() async -> Result<Void, NSError> {
         // Calling mimik Client Library method to shut down and erase edgeEngine storage
         switch self.edgeClient.resetEdgeEngine() {
         case .success:
@@ -321,7 +314,7 @@ struct ContentView: View {
         }
     }
     
-    func activateExternalEdgeEngine() -> Result<URLComponents, NSError> {
+    func activateExternalMimOE() -> Result<URLComponents, NSError> {
         // Calling mimik Client Library class method to activate the external edgeEngine support
         switch EdgeClient.activateExternalEdgeEngine(host: "192.168.4.47", port: 8083) {
         case .success(let urlComponents):
@@ -335,7 +328,7 @@ struct ContentView: View {
         }
     }
     
-    func edgeEngineLifecycleIsManaged() -> Bool {
+    func mimOELifecycleIsManaged() -> Bool {
         // Calling mimik Client Library method to determine the lifecycle management state
         switch self.edgeClient.edgeEngineLifecycleIsManaged() {
         case true:
