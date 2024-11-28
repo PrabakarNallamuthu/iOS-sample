@@ -1,5 +1,12 @@
-# iOS-devdocs-example-01
-Example Xcode project for iOS Tutorials 01
+# Example Xcode project for iOS Tutorials
+
+This complements the following mimik Client Library tutorials:
+
+- [Understanding the mimik Client Library for iOS](https://devdocs.mimik.com/key-concepts/10-index).
+- [Creating a Simple iOS Application that Uses an edge microservice](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/01-index).
+- [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index).
+- [Working with mim OE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
+- [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index).
 
 
 # Prerequisites
@@ -14,9 +21,7 @@ Example Xcode project for iOS Tutorials 01
 
 The example Xcode project has all the UI elements and initialization behavior needed to get the code up and running. 
 
-The place to start is cloning the code from GitHub and loading it into Xcode.
-
-Execute the following command to clone the example code from GitHub:
+The place to start is cloning the code from GitHub:
 
 ```
 git clone https://github.com/mimikgit/iOS-devdocs-example-01.git
@@ -24,7 +29,7 @@ git clone https://github.com/mimikgit/iOS-devdocs-example-01.git
 
 # Opening the Xcode Project
 
-As mentioned in the tutorials, the mimik Client Library cocoapods `EdgeCore` and `EdgeEngineDeveloper`, need to be made available to the application source code.
+As mentioned in the tutorials, the mimik Client Library cocoapods need to be made available to the application source code. We will do this with the help of CocoaPods dependency manager.
 
 We have setup these references in the `Podfile` file at the project level for you.
 
@@ -60,17 +65,7 @@ In the example project code find the `let edgeLicense` placeholder and replace i
 |**NOTE:** <br/><br/>**This example project requires a real iOS device running the latest iOS version.**<br/><br/>Working with the iOS Simulator and the mimik Client Libraries entails some special consideration. For more more information about iOS Simulator support see [this tutorial](../tutorials/12-index#workingwithaniossimulator).|
 |----------|
 
-# Example Functions:
+# Screenshot:
 
 ![Get ID Token](images/example-screenshot-01.png)
 
-
-# Additional reading
-
-In order to get more out of this article, the reader could further familiarize themselves with the following concepts and techniques:
-
-- [Understanding the mimik Client Library for iOS](https://devdocs.mimik.com/key-concepts/10-index).
-- [Creating a Simple iOS Application that Uses an edge microservice](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/01-index).
-- [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index).
-- [Working with mim OE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
-- [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index).
