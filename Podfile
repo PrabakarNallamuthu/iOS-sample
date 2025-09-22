@@ -1,17 +1,18 @@
-platform :ios, '15.0'
+platform :ios, '18.0'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/mimikgit/cocoapod-edge-specs.git'
 
 target 'example' do
   use_frameworks!
+  inhibit_all_warnings!
   pod 'EdgeCore'
-  pod 'EdgeEngineDeveloper'
+  pod 'mim-OE-ai-SE-iOS-developer'
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
       config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
     end
   end

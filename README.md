@@ -1,67 +1,158 @@
-# iOS-devdocs-example-01
-Example Xcode project for iOS Tutorials 01
+# Example Xcode project for iOS Tutorials
 
+This project demonstrates how to integrate and use the **mimik Client Library** in an iOS app.  
+It includes UI buttons and prewired Swift functions that let you interact with:  
+
+- The **mimik Developer Console** (authentication, app management, token issuance)  
+- The **mim OE runtime** (start, stop, reset, lifecycle management)  
+- **Edge microservices** (deploy, list, update, call, undeploy)  
+
+It is meant to be a practical companion to the tutorials on [mimik devdocs](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu).  
+
+---
 
 # Technical Prerequisites
 
-This example Xcode project has the following technical prerequisite: 
+To run this project, you will need:  
 
-* An actual device running the latest iOS version, connected to the machine with the latest version of Xcode.
+- An actual iOS device running the **latest iOS version** (simulator support is limited, see below).  
+- A Mac with the **latest version of Xcode** installed.  
+- A [mimik Developer Console](https://console.mimik.com) account with a valid **runtime (Edge) License**.  
+
+---
 
 # Getting the Source Code
 
-The example Xcode project has all the UI elements and initialization behavior needed to get the code up and running. 
+Clone this repo and open the project in Xcode:
 
-The place to start is cloning the code from GitHub and loading it into Xcode.
-
-Execute the following command to clone the example code from GitHub:
-
-```
+```bash
 git clone https://github.com/mimikgit/iOS-devdocs-example-01.git
 ```
 
+---
+
 # Opening the Xcode Project
 
-As mentioned in the tutorials, the mimik Client Library cocoapods `EdgeCore` and `EdgeEngineDeveloper`, need to be made available to the application source code.
+The project uses CocoaPods for dependency management.  
 
-We have setup these references in the `Podfile` file at the project level for you.
+We’ve included the required libraries (`EdgeCore` and `mim-OE-ai-SE-iOS-developer`) in the `Podfile`.
 
-**Step 1**:** From the command line run the following command to get to the Xcode project directory.
+### Step 1: Go to the project directory
 
-```
+```bash
 cd iOS-devdocs-example-01
 ```
 
-**Step 2**:** From the command line run the following command (from inside the Xcode project directory).
+### Step 2: Install dependencies
 
-```
+```bash
 pod install --repo-update
 ```
 
-**Step 3:** From the command line run the following command in your project directory.
+### Step 3: Open the workspace
 
-```
+```bash
 open example.xcworkspace
 ```
 
-**Step 4:**  Go to the mimik Developer Console and generate the Developer ID Token from an edge project. 
+### Step 4: Add your runtime license
 
-Learn more about the token generation process by reading this [article](https://devdocs.mimik.com/key-concepts/03-index)
+Go to the [mimik Developer Console](https://console.mimik.com) and copy your **runtime (Edge) license**.  
+In `ContentView.swift`, replace the placeholder:
 
-Once generated, copy the Developer ID Token. Then in the example project code find the `let devIdToken` placeholder and replace it with the actual Developer ID Token value.
+```swift
+private static let runtimeLicense = "{ADD-YOUR-RUNTIME-LICENSE-HERE}"
+```
 
+with your actual license value.  
 
-**Step 5:**  Back to the mimik Developer Console and copy the Developer edge License from there as well. 
+For details, see the tutorial:  
+👉 [Getting the mim OE license and Identity server values](https://devdocs.mimik.com/tutorials/01-submenu/01-submenu/02-index)
 
-Learn more about the process by reading this the tutorial [Getting the edgeEngine license and Identity server values from mimik Developer Portal](https://devdocs.mimik.com/tutorials/02-index)
+### Step 5: Run on a real device
 
-In the example project code find the `let edgeLicense` placeholder and replace it with the actual Developer edge License value.
+Connect an iOS device, build, and run the app in Xcode.  
 
-**Step 6:**  Connect an actual iOS device to the Xcode machine, compile the project and run it on the connected device. Explore the functions while reading through the tutorials.
+> ⚠️ **Important:** This project requires a real iOS device.  
+> The mimik Client Libraries have limitations when running inside the Simulator.  
+> See the [iOS Simulator support tutorial](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index#workingwithaniossimulator) for more info.  
 
-|**NOTE:** <br/><br/>**This example project requires a real iOS device running the latest iOS version.**<br/><br/>Working with the iOS Simulator and the mimik Client Libraries entails some special consideration. For more more information about iOS Simulator support see [this tutorial](../tutorials/12-index#workingwithaniossimulator).|
-|----------|
+---
 
-# Example Functions:
+# Example Features
+
+The sample UI exposes many core operations as buttons.  
+
+Here are some highlights:
+
+### Developer Console actions
+- **Login** with your developer account  
+- **Create**, **list**, or **delete** apps  
+- **Get ID Tokens** and **Shared Tokens**  
+- **Manage all apps** (⚠️ includes "delete all apps" functionality — use with care)
+
+### Runtime lifecycle
+- **Start / Stop / Reset** the runtime  
+- **Check runtime info**  
+- **Manage lifecycle automatically**  
+- **Activate external runtime** (e.g. on another host/device)  
+
+### Edge Microservices
+- **Deploy microservices** (example `randomnumber-v1.tar` is included)  
+- **List deployed services**  
+- **Call a microservice endpoint** (`/randomNumber`)  
+- **Update environment variables**  
+- **Undeploy services**  
+
+---
+
+# Tutorials on devdocs
+
+This project directly supports and builds on the step-by-step tutorials available at [mimik devdocs](https://devdocs.mimik.com).  
+
+Some key tutorials to explore alongside this example:  
+
+- [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index)  
+  - Learn how to set up your environment and obtain your runtime license.  
+
+- [Working with mim OE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index)  
+  - Walkthrough on deploying microservices like the included `randomnumber-v1`.  
+
+- [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index)  
+  - Understanding developer console login, app creation, and token issuance.  
+
+- [iOS Simulator Support](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index#workingwithaniossimulator)  
+  - Details on using mimik Client Libraries in simulator environments.  
+
+- [All Tutorials](https://devdocs.mimik.com/tutorials)  
+  - Browse the full library for topics including external runtimes, advanced microservice deployment, and integration with other platforms.  
+
+Use this sample app while following the tutorials — the functions here map directly to the actions described in the documentation.  
+
+---
+
+# Example Screenshot
 
 ![Get ID Token](images/example-screenshot-01.png)
+
+---
+
+# Useful Resources
+
+- 📘 [mimik developer documentation](https://devdocs.mimik.com)  
+- 🖥️ [mimik developer console](https://console.mimik.com)  
+- 📱 [mimik iOS client library docs](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/)  
+
+---
+
+# Tips for Developers
+
+- **Enable logging**: The project sets mimik Client Library logging to `.debug` for easier troubleshooting.  
+- **App cleanup**: If you experiment heavily, consider using the **delete all apps** button — but remove the `fatalError` guard first.  
+- **Microservice images**: To deploy your own services, replace `randomnumber_v1.tar` with your own `.tar` image and update the config accordingly.  
+- **Runtime license management**: You can switch between local and external runtimes by using the `activateExternalRuntime()` helper.  
+
+---
+
+Happy experimenting! 🚀  
+This project is your sandbox for learning how to interact with mimik runtimes, the developer console, and edge microservices directly from an iOS app — while following along with the official [mimik tutorials](https://devdocs.mimik.com/tutorials).

@@ -12,19 +12,23 @@
 		311580012BFD174200105A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 311580002BFD174200105A20 /* Assets.xcassets */; };
 		311580042BFD174200105A20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 311580032BFD174200105A20 /* Preview Assets.xcassets */; };
 		3181C4962BFFE9F20034433C /* randomnumber_v1.tar in Resources */ = {isa = PBXBuildFile; fileRef = 3181C4942BFFE9F20034433C /* randomnumber_v1.tar */; };
-		916A534743F9F5FECB0B5E6D /* Pods_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD8B86408B82C9FF4B82801 /* Pods_example.framework */; };
+		31BB7D252E4D40A000F05F1C /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB7D242E4D40A000F05F1C /* AdaptiveStack.swift */; };
+		31BB7D272E4D44D500F05F1C /* CustomBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB7D262E4D44D500F05F1C /* CustomBackgroundModifier.swift */; };
+		E6D4224278289AF38CB25AE8 /* Pods_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FDF7E022F83316D91EDABF /* Pods_example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21FDF7E022F83316D91EDABF /* Pods_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30037B7D609C15F8BF0FC7FA /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
 		31157FF92BFD174200105A20 /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31157FFC2BFD174200105A20 /* exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleApp.swift; sourceTree = "<group>"; };
 		31157FFE2BFD174200105A20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		311580002BFD174200105A20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		311580032BFD174200105A20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3181C4942BFFE9F20034433C /* randomnumber_v1.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = randomnumber_v1.tar; sourceTree = "<group>"; };
-		5BAD97D8C8BAA780CF14FE27 /* Pods-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.debug.xcconfig"; path = "Target Support Files/Pods-example/Pods-example.debug.xcconfig"; sourceTree = "<group>"; };
-		9AD8B86408B82C9FF4B82801 /* Pods_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0859D2F032F0799D87B2C6C /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
+		31BB7D242E4D40A000F05F1C /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
+		31BB7D262E4D44D500F05F1C /* CustomBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundModifier.swift; sourceTree = "<group>"; };
+		B7C9559E3229B8AB99C304A8 /* Pods-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.debug.xcconfig"; path = "Target Support Files/Pods-example/Pods-example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				916A534743F9F5FECB0B5E6D /* Pods_example.framework in Frameworks */,
+				E6D4224278289AF38CB25AE8 /* Pods_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +49,7 @@
 				31157FFB2BFD174200105A20 /* example */,
 				31157FFA2BFD174200105A20 /* Products */,
 				3CC6C72873497E61EC184E82 /* Pods */,
-				525E5FC6CDEB89BB675061A3 /* Frameworks */,
+				6F5B73DEA29D1EA9974640C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,8 @@
 			children = (
 				31157FFC2BFD174200105A20 /* exampleApp.swift */,
 				31157FFE2BFD174200105A20 /* ContentView.swift */,
+				31BB7D242E4D40A000F05F1C /* AdaptiveStack.swift */,
+				31BB7D262E4D44D500F05F1C /* CustomBackgroundModifier.swift */,
 				311580002BFD174200105A20 /* Assets.xcassets */,
 				3181C4942BFFE9F20034433C /* randomnumber_v1.tar */,
 				311580022BFD174200105A20 /* Preview Content */,
@@ -80,16 +86,16 @@
 		3CC6C72873497E61EC184E82 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5BAD97D8C8BAA780CF14FE27 /* Pods-example.debug.xcconfig */,
-				A0859D2F032F0799D87B2C6C /* Pods-example.release.xcconfig */,
+				B7C9559E3229B8AB99C304A8 /* Pods-example.debug.xcconfig */,
+				30037B7D609C15F8BF0FC7FA /* Pods-example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		525E5FC6CDEB89BB675061A3 /* Frameworks */ = {
+		6F5B73DEA29D1EA9974640C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AD8B86408B82C9FF4B82801 /* Pods_example.framework */,
+				21FDF7E022F83316D91EDABF /* Pods_example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,11 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 311580072BFD174200105A20 /* Build configuration list for PBXNativeTarget "example" */;
 			buildPhases = (
-				DC2F2252B5B5162F028CF461 /* [CP] Check Pods Manifest.lock */,
+				F23B057D766E414969C6EE90 /* [CP] Check Pods Manifest.lock */,
 				31157FF52BFD174200105A20 /* Sources */,
 				31157FF62BFD174200105A20 /* Frameworks */,
 				31157FF72BFD174200105A20 /* Resources */,
-				A2D46F001FF7BA570FDE1DB3 /* [CP] Embed Pods Frameworks */,
+				55B6867CF3847CD3CE3BB364 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,7 +169,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A2D46F001FF7BA570FDE1DB3 /* [CP] Embed Pods Frameworks */ = {
+		55B6867CF3847CD3CE3BB364 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,7 +186,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-example/Pods-example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC2F2252B5B5162F028CF461 /* [CP] Check Pods Manifest.lock */ = {
+		F23B057D766E414969C6EE90 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,6 +217,8 @@
 			files = (
 				31157FFF2BFD174200105A20 /* ContentView.swift in Sources */,
 				31157FFD2BFD174200105A20 /* exampleApp.swift in Sources */,
+				31BB7D252E4D40A000F05F1C /* AdaptiveStack.swift in Sources */,
+				31BB7D272E4D44D500F05F1C /* CustomBackgroundModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -326,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -338,7 +346,7 @@
 		};
 		311580082BFD174200105A20 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BAD97D8C8BAA780CF14FE27 /* Pods-example.debug.xcconfig */;
+			baseConfigurationReference = B7C9559E3229B8AB99C304A8 /* Pods-example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -354,6 +362,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,14 +371,28 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mimik.ios.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_INTERNAL_IMPORTS_BY_DEFAULT = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Debug;
 		};
 		311580092BFD174200105A20 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0859D2F032F0799D87B2C6C /* Pods-example.release.xcconfig */;
+			baseConfigurationReference = 30037B7D609C15F8BF0FC7FA /* Pods-example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -385,6 +408,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,8 +417,22 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mimik.ios.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = YES;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = YES;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_UPCOMING_FEATURE_INTERNAL_IMPORTS_BY_DEFAULT = YES;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = YES;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Release;
 		};
