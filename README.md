@@ -155,4 +155,4 @@ Use this sample app while following the tutorials — the functions here map dir
 ---
 
 Happy experimenting! 🚀  
-This project is your sandbox for learning how to interact with mimik runtimes, the developer console, and edge microservices directly from an iOS app — while following along with the official [mimik tutorials](https://devdocs.mimik.com/tutorials).
+ggThis project is your sandbox for learning how to interact with mimik runtimes, the developer console, and edge microservices directly from an iOS app — while following along with the official [mimik tutorials](https://devdocs.mimik.com/tutorials).
